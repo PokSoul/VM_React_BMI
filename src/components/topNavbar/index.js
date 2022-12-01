@@ -1,30 +1,28 @@
-import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
-import allTheActions from '../../actions'
-import styled from 'styled-components'
-import { SunFill } from '@styled-icons/bootstrap/SunFill'
-import { MoonStarsFill } from '@styled-icons/bootstrap/MoonStarsFill'
-import { LineChart } from '@styled-icons/boxicons-regular/LineChart'
-import Logo from '../../logo.svg'
+/* eslint-disable no-undef */
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import allTheActions from '../../actions';
+import styled from 'styled-components';
+import { SunFill } from '@styled-icons/bootstrap/SunFill';
+import { MoonStarsFill } from '@styled-icons/bootstrap/MoonStarsFill';
+import { LineChart } from '@styled-icons/boxicons-regular/LineChart';
+import Logo from '../../logo.svg';
 
 const TopNavbar = () => {
-  const dispatch = useDispatch()
-  const theme = useSelector(state => state.theme.value)
-  const history = useNavigate()
+  const dispatch = useDispatch();
+  const theme = useSelector(state => state.theme.value);
+  const history = useNavigate();
 
   return (
     <ContainerTop>
       <Name onClick={() => history('/')}>
-        <LogoImg src={Logo} alt={Logo} />
+        <LogoImg src={Logo} alt="Logo" />
         <h3>{process.env.REACT_APP_NAME}</h3>
       </Name>
-      <ButtonTheme
-       onClick={() =>
-        history('/chart')
-      }>
+      <ButtonTheme onClick={() => history('/chart')}>
         <LineChartIcon /> <span>Stats</span>
-      </ButtonTheme> 
+      </ButtonTheme>
       <ButtonTheme
         onClick={() =>
           dispatch(
@@ -37,8 +35,8 @@ const TopNavbar = () => {
         {theme === 'lightTheme' ? <MoonIcon /> : <SunIcon />}
       </ButtonTheme>
     </ContainerTop>
-  )
-}
+  );
+};
 
 const ContainerTop = styled.div`
   display: flex;
@@ -46,12 +44,12 @@ const ContainerTop = styled.div`
   align-items: center;
   top: 0;
   background: ${props => props.theme.navbarColor};
-`
+`;
 const LogoImg = styled.img`
   max-width: 15%;
   margin-right: 3%;
   border-radius: 10%;
-`
+`;
 
 // tags texts
 const Name = styled.div`
@@ -62,26 +60,25 @@ const Name = styled.div`
   left: 0;
   margin-left: 2%;
   color: ${props => props.theme.textColor};
-
-`
+`;
 
 const ButtonTheme = styled.button`
   width: 50px;
   background: none;
   color: ${props => props.theme.themeBtnColor};
   border: none;
-`
+`;
 
 // Icons
 const MoonIcon = styled(MoonStarsFill)`
   max-width: 25px;
-`
+`;
 const SunIcon = styled(SunFill)`
   max-width: 25px;
-`
+`;
 
 const LineChartIcon = styled(LineChart)`
   max-width: 100%;
-` 
+`;
 
-export default TopNavbar
+export default TopNavbar;
