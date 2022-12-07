@@ -37,6 +37,7 @@ const Wrapper = styled.div`
   border-radius: 8px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: box-shadow 0.25s;
+  position: relative;
   margin: 20px;
 `;
 
@@ -59,8 +60,11 @@ const DeleteButton = styled.button`
   font-weight: 700;
   padding: 5px 9px;
   cursor: pointer;
-  right: 17px;
-  top: 12px;
+  display: inline-block;
+  margin: 5px 5px 0 0;
+  position: absolute;
+  top: 0;
+  right: 0;
 `;
 
 Cards.propTypes = {

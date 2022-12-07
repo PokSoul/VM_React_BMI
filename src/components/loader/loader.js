@@ -1,5 +1,5 @@
 import React from 'react';
-import LoaderGif from '../../assets/pong.gif';
+import LoaderGif from '../../img/pong.gif';
 import styled from 'styled-components';
 
 const Loader = () => {

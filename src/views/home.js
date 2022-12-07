@@ -9,12 +9,12 @@ import { getData, storeData } from '../config/localStorage';
 const Home = () => {
   const initialState = () => getData('data') || [];
   const [state, setState] = useState(initialState);
-  const [data, setData] = useState({});
+  const [data, setData] = useState('');
 
   useEffect(() => {
     storeData('data', state);
     const bmi = state.map(obj => obj.bmi);
-    let newData = { bmi };
+    let newData = bmi;
     setData(newData);
   }, [state]);
 
@@ -33,7 +33,7 @@ const Home = () => {
       <Navbar />
       <Container>
         <FormImc change={handleChange} />
-        <ChartGauge bmiData={data.bmi} />
+        <ChartGauge bmiData={data.slice(-1)} />
       </Container>
     </div>
   );

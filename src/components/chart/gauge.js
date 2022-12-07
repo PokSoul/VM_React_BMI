@@ -4,17 +4,17 @@ import PropTypes from 'prop-types';
 
 const Line = ({ bmiData }) => {
   var bmiValue = bmiData / 100;
-
-  if (bmiValue < 0.18) {
+  if (bmiValue < 0.18 && bmiValue > 0.1) {
     bmiValue = 0.2;
   } else if (bmiValue > 0.25 && bmiValue < 0.3) {
     bmiValue = 0.4;
   } else if (bmiValue > 0.3 && bmiValue < 0.4) {
     bmiValue = 0.6;
-  } else {
+  } else if (bmiValue > 0.4) {
     bmiValue = 0.8;
+  } else if (bmiValue < 0.0) {
+    bmiValue = 0;
   }
-  console.log(bmiValue);
 
   const option = {
     series: [

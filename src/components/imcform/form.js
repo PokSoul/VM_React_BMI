@@ -33,7 +33,7 @@ const FormIMC = ({ change }) => {
   return (
     <div>
       <FormContainer>
-        <FormTitle>BMI Tracker</FormTitle>
+        <FormTitle>Calculateur IMC</FormTitle>
         <StyledForm>
           <StyledInput
             id="weight"

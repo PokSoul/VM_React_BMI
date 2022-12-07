@@ -10,6 +10,7 @@ import MovingText from 'react-moving-text';
 const Chart = () => {
   const [state, setState] = useState(getData('data'));
   const [data, setData] = useState({});
+  const [counter, setCounter] = useState(5);
 
   const handleDelete = id => {
     let newState = state.filter(i => {
@@ -26,6 +27,10 @@ const Chart = () => {
     let newData = { date, bmi, weight };
     setData(newData);
   }, [state]);
+
+  useEffect(() => {
+    counter > 0 && setTimeout(() => setCounter(counter - 1), 1000);
+  }, [counter]);
 
   return (
     <div>
@@ -67,7 +72,6 @@ const Chart = () => {
           >
             <TextMoved>Pas de données</TextMoved>
           </MovingText>
-          ;
         </Container>
       )}
     </div>
@@ -78,7 +82,6 @@ const ContainerCard = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* Properties used for this pen specifically */
   position: relative;
   border-style: solid;
   border-radius: 8px;
