@@ -17,6 +17,12 @@ npm run start
 ```
 [http://localhost:3000/](http://localhost:3000/)
 
+## Deploy version by Netifly:
+```
+(https://main--venerable-concha-b5e9e5.netlify.app/)
+```
+
+
 Enjoy 😊 
 
 
