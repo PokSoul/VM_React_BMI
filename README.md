@@ -19,7 +19,7 @@ npm run start
 
 ## Deploy version by Netifly:
 
-[https://main--venerable-concha-b5e9e5.netlify.app/](DeployVersion)
+[Deploy Version](https://main--venerable-concha-b5e9e5.netlify.app/)
 
 
 
